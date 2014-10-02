@@ -26,7 +26,7 @@ Function scale_h_pixel, in_val, in_hv, in_rfdi, method
 			index = where(in_hv ge hv_thresh, count)
 			if (count gt 0) then begin
 				hv_mean = mean(in_hv)
-				out_array[index] = in_val * in_hv / hv_mean
+				out_array[index] = in_val * in_hv[index] / hv_mean
 			endif
 		End  ; End of method 1
 
