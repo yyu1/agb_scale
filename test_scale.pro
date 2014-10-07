@@ -1,9 +1,9 @@
 in_h_file = '/Volumes/Global_250m/output/biomass/test_3.2sec/sam_test_amazon_small_hlorey_latlon_9.6sec.flt'
 in_hh_file = '/Volumes/Global_250m/output/biomass/test_3.2sec/sam_3.2sec_HH_small_piece.flt'
-in_hv_file = '/Volumes/Global_250m/output/biomass/test_3.2sec/sam_3.2sec_HV_small_piece.flt'
+in_hv_file = '/Volumes/Global_250m/output/biomass/test_3.2sec/sam_3.2sec_HV_sqr_small_piece.flt'
 in_rfdi_file = '/Volumes/Global_250m/output/biomass/test_3.2sec/sam_3.2sec_RFDI_small_piece.flt'
 
-out_file = '/Volumes/Global_250m/output/biomass/test_3.2sec/sam_test_amazon_hlorey_3.2sec_method1.flt'
+out_file = '/Volumes/Global_250m/output/biomass/test_3.2sec/sam_test_amazon_hlorey_3.2sec_method2.flt'
 
 openr, 1, in_h_file
 openr, 2, in_hh_file
@@ -28,14 +28,14 @@ for j=0ULL, 299ULL do begin
 	
 	readu, 1, in_h_line
 	readu, 2, in_hh_line
-	readu, 2, in_hv_line
-	readu, 2, in_rfdi_line
+	readu, 3, in_hv_line
+	readu, 4, in_rfdi_line
 
 	for i=0ULL, 299ULL do begin
 			hh_window = in_hh_line[i*3:i*3+2,*]
 			hv_window = in_hv_line[i*3:i*3+2,*]
 			rfdi_window = in_rfdi_line[i*3:i*3+2,*]
-			out_line[i*3:i*3+2,*] = scale_h_pixel(in_h_line[i], hv_window, rfdi_window ,1)
+			out_line[i*3:i*3+2,*] = scale_h_pixel(in_h_line[i], hv_window, rfdi_window ,2)
 	endfor
 
 	writeu, 10, out_line
