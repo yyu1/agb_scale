@@ -72,6 +72,10 @@ Function scale_h_pixel, in_val, in_hv, in_rfdi, method
 				index = where((~select) or (in_hv gt hv_thresh)) ; only apply threshold if hv variance is relatively small compared to rfdi so we don't blank out shadow areas of topography
 				out_array[index] = in_val * (((coef_hv[index] * select[index] + coef_rfdi[index] * (~select[index]))-1)*0.5+1)
 			endif
+
+			abs_thresh = 0.003
+			index = where(in_hv lt abs_thresh, count)
+			if (count gt 0) then out_array[index] = 0
 		End ; End of method 5
 
 
