@@ -1,12 +1,12 @@
 xdim = 13000ULL
 ydim = 4000ULL
 
-in_h_file = '/Volumes/Global_250m/output/sam/v3/maxent_sam_hlorey_using_newprior_9.6sec_slice_fuzzy.flt'
+in_h_file = '/Volumes/Global_250m/output/sam/v3/maxent_sam_hlorey_using_newprior_9.6sec_slice_fuzzy2.flt'
 in_hh_file = '/Volumes/Global_250m/alos/3.2sec/sam/sam_3.2sec_HV_slice.flt'
 in_hv_file = '/Volumes/Global_250m/alos/3.2sec/sam/sam_3.2sec_HV_slice.flt'
 in_rfdi_file = '/Volumes/Global_250m/alos/3.2sec/sam/sam_3.2sec_RFDI_slice.flt'
 
-out_file = '/Volumes/Global_250m/output/sam/v3/3.2sec/maxent_sam_hlorey_3.2sec_method5_fuzzy.flt'
+out_file = '/Volumes/Global_250m/output/sam/v3/3.2sec/maxent_sam_hlorey_3.2sec_method5_fuzzy2.flt'
 
 openr, 1, in_h_file
 ;openr, 2, in_hh_file
